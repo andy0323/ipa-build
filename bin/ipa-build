@@ -3,7 +3,7 @@
 var shell   = require('shelljs');
 var program = require('commander');
 var version = require("../package.json").version;
-var utils   = require("../utils")
+var utils   = require("../lib/utils")
 
 Array.prototype.contain = function(obj) { return this.indexOf(obj) !== -1;}
 
