@@ -12,9 +12,15 @@ ipa-build是针对iOS项目的打包工具，能够一键生成ipa的开发工�
 
 	ipa-build project_path -v -o ipa_output_path
 	
-**参数：** 
+**参数（必填项）：** 
 
-project_path代表项目路径，只要指向项目主文件夹即可，目前仅能传入一个。
+project_path代表项目路径，只要指向项目主文件夹即可。
+
+注意事项：
+
+1. project_path为**必选项**，否则无法定位打包项目工程文件。
+*  目前`project_path`仅能传入一个。
+
 
 **可选项：**
 
