@@ -36,11 +36,19 @@ project_path代表项目路径，只要指向项目主文件夹即可。
 *  输入`ipa-build .`生成脚本
 *  输入`open build`获取ipa文件
 
-## 版本历史
+##Contributing
+
+Fork it
+Create your feature branch (git checkout -b my-new-feature)  
+Commit your changes (git commit -am 'Add some feature')  
+Push to the branch (git push origin my-new-feature)  
+Create new Pull Request  
+
+## History
 
 - v0.1.0 初始化版本
 
-## 欢迎fork和反馈
+## Welcome fork and feedback
 
 - write by `i5ting` shiren1118@126.com
 - write by `andy` andy_ios@163.com
