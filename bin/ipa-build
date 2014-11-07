@@ -3,6 +3,9 @@
 var shell   = require('shelljs');
 var program = require('commander');
 var version = require("../package.json").version;
+var utils   = require("../utils")
+
+Array.prototype.contain = function(obj) { return this.indexOf(obj) !== -1;}
 
 program
   .version(version)
@@ -14,6 +17,7 @@ program
 
 // 是否打印
 var _verbose = program.verbose;
+utils.verbose = _verbose;
 
 // 输出ipa路径
 var output   = program.output;
@@ -71,51 +75,11 @@ if (program.output) {
   ipa_path = output;
 }
 
-log('项目名称='       +    proj_name);
-log('文件夹路径='     +    fold_path);
-log('输出文件路径='    +   build_path);
-log('编译包路径='     +    app_path);
-log('安装包输出路径='  +    ipa_path);
+utils.log('项目名称='       +    proj_name);
+utils.log('文件夹路径='     +    fold_path);
+utils.log('输出文件路径='    +   build_path);
+utils.log('编译包路径='     +    app_path);
+utils.log('安装包输出路径='  +    ipa_path);
 
 // 运行程序
 require('../index')(xcodeproj_path, ipa_path, build_path, proj_name, app_path);
-
-/**
- *  打印运行日志
- */
-function log(str){
-    if(_verbose == true){
-        console.log(str);
-    }
-}
-
-/**
- *  模块是否已经定义
- */
-function isDefined(x) { return x !== null && x !== undefined; } 
-
-/**
- *  数组扩展
- */
-Array.prototype.contain = function(obj) {
-    return this.indexOf(obj) !== -1;
-}
-
-/**
- *  判断是否存在 项目文件路径 .xcodeproj
- */
-function isExist(xcodeproj_path) {
-
-    // 如果路径存在, 并且是字符串
-    if (xcodeproj_path && typeof(xcodeproj_path) == 'string') {
-
-        // 正则匹配
-        var reg = /\.xcodeproj$/g;        
-
-        if(reg.test(xcodeproj_path)) 
-            return true;
-        else 
-            return false;
-    }
-}
-
