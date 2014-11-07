@@ -1,0 +1,22 @@
+{
+  "preferGlobal": "true",
+  "bin": {
+    "badge": "bin/badge.js"
+  },
+  "name": "ipa-build",
+  "version": "0.1.2",
+  "description": "tool -- Create ipa use xcodeBuild & xcrun",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ipaBuilder"
+  },
+  "keywords": [
+    "ipa"
+  ],
+  "author": "andy0323",
+  "license": "ISC",
+  "devDependencies": {
+    "shelljs": "~0.3.0",
+    "commander": "~2.5.0"
+  }
+}
