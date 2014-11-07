@@ -6,7 +6,7 @@ ipa-build是针对iOS项目的打包工具，能够一键生成ipa的开发工�
 
 全局安装打包工具，打开你的终端Terminal，调用下面的命令即可。
 
-*  `npm install -g ipa-build`
+1. `npm install -g ipa-build`
 *  `npm install -g badge-cli`
 *  `badge -n ipa-build`
 
