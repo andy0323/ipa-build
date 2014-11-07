@@ -50,8 +50,8 @@ Create new Pull Request
 
 ## Welcome fork and feedback
 
-- write by `i5ting` shiren1118@126.com
 - write by `andy` andy_ios@163.com
+- write by `i5ting` shiren1118@126.com
 
 如有建议或意见，请在issue提问或邮件
 
