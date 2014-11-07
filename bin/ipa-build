@@ -37,21 +37,29 @@ var pbxproj_search_result = shell.find('-R', search_folder).filter(function(file
 
 // 搜索项目引用索引
 var pbxproj_main_arr = new Array;
-for (var i = 0; i < pbxproj_search_result.length; i++) {
-  
-  var pbxproj = pbxproj_search_result[i];
-  var content = shell.cat(pbxproj);
+if (pbxproj_search_result.length > 1) {
 
-  var reg = /PBXContainerItemProxy/g;
-  var search_res = reg.test(content);
-  if (search_res == true) {
-    pbxproj_main_arr.push(pbxproj);
-  }
-};
+  for (var i = 0; i < pbxproj_search_result.length; i++) {
+    
+    var pbxproj = pbxproj_search_result[i];
+    var content = shell.cat(pbxproj);
 
-if (pbxproj_main_arr.length != 1) {
-  console.log('搜索工程主文件失败..'); return;
-};
+    var reg = /PBXContainerItemProxy/g;
+    var search_res = reg.test(content);
+    if (search_res == true) {
+      pbxproj_main_arr.push(pbxproj);
+    }
+  };
+
+  if (pbxproj_main_arr.length != 1) {
+    console.log('工程文件搜索失败,请确认文件路径..'); return;
+  }  
+
+}else if (pbxproj_search_result.length == 1){
+  pbxproj_main_arr = pbxproj_search_result;
+}else {
+  console.log('没有匹配的工程文件'); return;  
+}
 
 // 获取工程路径
 var pbxproj_splite_arr = pbxproj_main_arr[0].split('/')
@@ -66,7 +74,7 @@ var arr = xcodeproj_path.split('/');
 
 var proj_name  = arr.pop().split('.')[0];
 var fold_path  = arr.join('/');
-var build_path = fold_path + '/build';
+var build_path = shell.pwd() + '/ipa-build-path';
 var app_path   = build_path + '/' + proj_name + '.app';
 var ipa_path   = build_path + '/' + proj_name + '.ipa';
 
@@ -83,3 +91,5 @@ utils.log('安装包输出路径='  +    ipa_path);
 
 // 运行程序
 require('../index')(xcodeproj_path, ipa_path, build_path, proj_name, app_path);
+
+shell.exec('open ' + build_path);

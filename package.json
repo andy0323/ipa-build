@@ -13,16 +13,13 @@
   "license": "MIT",
   "main": "./index.js",
   "scripts": {
-    "test": "node ipa-build"
+    "test": "./bin/ipa-build test/ios"
   },
   "preferGlobal": "true",
   "bin": {
     "ipa-build": "./bin/ipa-build"
   },
-  "devDependencies": {
-    "shelljs": "~0.3.0",
-    "commander": "~2.5.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "shelljs": "~0.3.0",
     "commander": "~2.5.0"
