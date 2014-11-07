@@ -1,22 +1,29 @@
 {
-  "preferGlobal": "true",
-  "bin": {
-    "ipa-build": "bin/ipa-build"
-  },
   "name": "ipa-build",
   "version": "0.1.2",
+  "author": "andy0323",
   "description": "tool -- Create ipa use xcodeBuild & xcrun",
-  "main": "index.js",
-  "repository":"https://github.com/andy0323/ipa-build",
-  "scripts": {
-    "test": "node ipa-build"
-  },
   "keywords": [
     "ipa ios tool"
   ],
-  "author": "andy0323",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andy0323/ipa-build"
+  },
   "license": "MIT",
+  "main": "./index.js",
+  "scripts": {
+    "test": "node ipa-build"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "ipa-build": "./bin/ipa-build"
+  },
   "devDependencies": {
+    "shelljs": "~0.3.0",
+    "commander": "~2.5.0"
+  },
+  "dependencies": {
     "shelljs": "~0.3.0",
     "commander": "~2.5.0"
   }
