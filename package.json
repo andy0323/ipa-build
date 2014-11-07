@@ -12,10 +12,10 @@
     "test": "node ipa-build"
   },
   "keywords": [
-    "ipa"
+    "ipa ios tool"
   ],
   "author": "andy0323",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "shelljs": "~0.3.0",
     "commander": "~2.5.0"
