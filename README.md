@@ -40,6 +40,16 @@ project_path代表项目路径，只要指向项目主文件夹即可。
 *  输入`ipa-build .`生成脚本
 *  输入`open build`获取ipa文件
 
+## Test
+
+如何测试ipa-build？
+
+1. 请打开工程test文件下的iOS文件
+2. 设置Build Setting中的Code Settings证书配置项。
+3. `Command + B`，确认编译完成
+4. 在项目文件中运行 `npm test`
+5. 将ipa文件导入设备，检查安装包的完整性。
+
 ##Contributing
 
 *  Fork it
