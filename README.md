@@ -2,13 +2,13 @@
 
 ipa-build是针对iOS项目的打包工具，能够一键生成ipa的开发工具。
 
+[![npm version](https://badge.fury.io/js/ipa-build.svg)](http://badge.fury.io/js/ipa-build)
+
 ## how to install 
 
 全局安装打包工具，打开你的终端Terminal，调用下面的命令即可。
 
 1. `npm install -g ipa-build`
-*  `npm install -g badge-cli`
-*  `badge -n ipa-build`
 
 ## Command
 
