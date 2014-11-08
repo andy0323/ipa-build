@@ -12,6 +12,8 @@ ipa-build是针对iOS项目的打包工具，能够一键生成ipa的开发工�
 *  npm安装完成以后，终端运行`npm install -g ipa-build`
 *  终端运行`ipa-build -h`确认安装成功
 
+如果还有其他疑问，可以参照[npm相关资料](https://www.npmjs.org/doc/misc/npm-developers.html)，希望可以帮助你更好得了解它
+
 ## Command
 
 	ipa-build project_path -v -o ipa_output_path
