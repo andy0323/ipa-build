@@ -4,5 +4,3 @@ module.exports = function (xcodeproj_path, ipa_path, build_path ,project_name, a
 	builder.xcodebuild(xcodeproj_path, project_name, build_path);
 	builder.xcrun(app_path, ipa_path);
 }
-
-
