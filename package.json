@@ -25,7 +25,8 @@
     "gulp-mocha": "^1.1.1"
   },
   "dependencies": {
-    "shelljs": "~0.3.0",
-    "commander": "~2.5.0"
+    "commander": "~2.5.0",
+    "config": "^1.7.0",
+    "shelljs": "~0.3.0"
   }
 }
