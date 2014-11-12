@@ -1,0 +1,7 @@
+{
+	// 是否DEBUG模式
+	"debug": true,
+	
+	// 真机ARCHS
+	"archs_os": "\"armv7 armv7s arm64\""
+}
