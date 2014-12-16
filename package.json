@@ -1,6 +1,6 @@
 {
   "name": "ipa-build",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "author": "andy0323",
   "description": "tool -- Create ipa use xcodeBuild & xcrun",
   "keywords": [
@@ -27,7 +27,7 @@
   "dependencies": {
     "app-parser": "^0.1.3",
     "commander": "~2.5.0",
-    "config": "^1.7.0",
+    "config": "^1.9.0",
     "shelljs": "~0.3.0"
   }
 }
