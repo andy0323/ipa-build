@@ -40,16 +40,8 @@ if (projectPath == 'DEFINE_ERROR') {
     return;
 };
 
-// 获取工程路径
-var pbxproj_splite_arr = projectPath[0].split('/')
-// 获取上级文件夹路径
-pbxproj_splite_arr.pop();
-
-// 获取工程主路径
-var xcodeproj_path = pbxproj_splite_arr.join('/');
-
 // 解析所有参数，设置默认参数
-var arr = xcodeproj_path.split('/');
+var arr = projectPath.split('/');
 
 var proj_name  = arr.pop().split('.')[0];
 var fold_path  = arr.join('/');
@@ -69,4 +61,4 @@ utils.log('编译包路径='     +    app_path);
 utils.log('安装包输出路径='  +    ipa_path);
 
 // 运行程序
-require('../index')(xcodeproj_path, ipa_path, build_path, proj_name, app_path);
+require('../index')(projectPath, ipa_path, build_path, proj_name, app_path);
