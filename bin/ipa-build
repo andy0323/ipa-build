@@ -4,6 +4,7 @@ var shell   = require('shelljs');
 var program = require('commander');
 var version = require("../package.json").version;
 var utils   = require("../lib/utils")
+var appParser = require('app-parser');
 
 Array.prototype.contain = function(obj) { return this.indexOf(obj) !== -1;}
 
@@ -22,6 +23,7 @@ utils.verbose = _verbose;
 // 输出ipa路径
 var output   = program.output;
 
+var iosParser = appParser.iosParser;
 
 // 判断参数输入
 var args = program.args;
@@ -30,39 +32,16 @@ if (args.length != 1) {
 };
 
 // 搜索文件路径
-var search_folder = args[0];
+var searchPath = args[0];
+var projectPath = iosParser.getProjectPath(searchPath);
 
-// 查找pbxproj文件
-var pbxproj_search_result = shell.find('-R', search_folder).filter(function(file) { return file.match(/\.pbxproj$/); });
-
-// 搜索项目引用索引
-var pbxproj_main_arr = new Array;
-if (pbxproj_search_result.length > 1) {
-
-  for (var i = 0; i < pbxproj_search_result.length; i++) {
-    
-    var pbxproj = pbxproj_search_result[i];
-    var content = shell.cat(pbxproj);
-
-    var reg = /PBXContainerItemProxy/g;
-    var search_res = reg.test(content);
-    if (search_res == true) {
-      pbxproj_main_arr.push(pbxproj);
-    }
-  };
-
-  if (pbxproj_main_arr.length != 1) {
-    console.log('工程文件搜索失败,请确认文件路径..'); return;
-  }  
-
-}else if (pbxproj_search_result.length == 1){
-  pbxproj_main_arr = pbxproj_search_result;
-}else {
-  console.log('没有匹配的工程文件'); return;  
-}
+if (projectPath == 'DEFINE_ERROR') {
+    console.log('请确认您输入的项目路径是否正确..');
+    return;
+};
 
 // 获取工程路径
-var pbxproj_splite_arr = pbxproj_main_arr[0].split('/')
+var pbxproj_splite_arr = projectPath[0].split('/')
 // 获取上级文件夹路径
 pbxproj_splite_arr.pop();
 
