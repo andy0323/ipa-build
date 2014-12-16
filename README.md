@@ -63,6 +63,8 @@ project_path代表项目路径，只要指向项目主文件夹即可。
 ## History
 
 - v0.1.0 初始化版本
+- v0.2.0 雏形版本
+- v0.3.0 引入app-parser模块
 
 ## Welcome fork and feedback
 
