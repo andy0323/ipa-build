@@ -16,16 +16,16 @@ ipa-build是针对iOS项目的打包工具，能够一键生成ipa的开发工�
 
 ## Command
 
-	ipa-build <project_path> -v -o <ipa_output_path>
+	ipa-build ${PROJECT_DIR} -v -o ${IPA_OUTPUT_PATH}
 	
 **参数（必填项）：** 
 
-project_path代表项目路径，只要指向项目主文件夹即可。
+`${PROJECT_DIR}`代表项目路径，只要指向项目主文件夹即可。
 
 注意事项：
 
-1. project_path为**必选项**，否则无法定位打包项目工程文件。
-*  目前`project_path`仅能传入一个。
+1. PROJECT_DIR为**必选项**，否则无法定位打包项目工程文件。
+*  目前`IPA_OUTPUT_PATH`仅能传入一个。
 
 
 **可选项：**
@@ -46,11 +46,13 @@ project_path代表项目路径，只要指向项目主文件夹即可。
 
 如何测试ipa-build？
 
-1. 请打开工程test文件下的iOS文件
+1. 创建一个iOS项目工程
 2. 设置Build Setting中的Code Settings证书配置项。
-3. `Command + B`，确认编译完成
-4. 在项目文件中运行 `npm test`
-5. 将ipa文件导入设备，检查安装包的完整性。
+3. `Command + B`，确认编译通过保证无误。
+4. 打开终端，`cd`到项目路径下，执行`ipa-build`
+5. 执行完毕，提示Success成功后，执行`open .`
+6. 将`/IPA_BUILD_DIR/ipa`文件导入设备，检查安装包的完整。
+7. 执行过程中若出现异常、可以通过issue说明原因，我会及时更新。
 
 ##Contributing
 
@@ -62,6 +64,9 @@ project_path代表项目路径，只要指向项目主文件夹即可。
 
 ## History
 
+- v0.6.0 pod项目工程地址查询优化
+- v0.5.0 兼容pod项目
+- v0.4.0 代码整理
 - v0.3.0 引入app-parser模块
 - v0.2.0 雏形版本
 - v0.1.0 初始化版本
