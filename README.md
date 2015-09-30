@@ -16,7 +16,7 @@ ipa-build是针对iOS项目的打包工具，能够一键生成ipa的开发工�
 
 ## Command
 
-	ipa-build project_path -v -o ipa_output_path
+	ipa-build <project_path> -v -o <ipa_output_path>
 	
 **参数（必填项）：** 
 
